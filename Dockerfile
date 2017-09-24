@@ -29,7 +29,8 @@ RUN mkdir -p ${PATH_RUN}
 #-----------------------------------------------------------------------------
 # Installation Doom2
 #-----------------------------------------------------------------------------
-RUN wget http://www.dr-shost.com/freqs/dosgam/doom2.rar -O /tmp/doom2/doom2.rar \
+RUN mkdir -p /tmp/doom2 \
+    && wget http://www.dr-shost.com/freqs/dosgam/doom2.rar -O /tmp/doom2/doom2.rar \
     && wget http://www.dr-shost.com/freqs/dosgam/doom2.r00 -O /tmp/doom2/doom2.r00 \
     && wget http://www.dr-shost.com/freqs/dosgam/doom2.r01 -O /tmp/doom2/doom2.r01 \
     && wget http://www.dr-shost.com/freqs/dosgam/doom2.r02 -O /tmp/doom2/doom2.r02 \
