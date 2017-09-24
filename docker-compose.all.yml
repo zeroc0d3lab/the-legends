@@ -1,0 +1,174 @@
+version: '2'
+
+services:
+
+#-------------------------------------------------------------------
+# ALL IN ONE
+#-------------------------------------------------------------------
+  all_in_one:
+    build:
+      context: ./allinone
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_ALL=${PATH_ALL}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# DOOM 2
+#-------------------------------------------------------------------
+  doom2:
+    build:
+      context: ./doom2
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_DOOM2=${PATH_DOOM2}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# DUNE 2
+#-------------------------------------------------------------------
+  dune2:
+    build:
+      context: ./dune2
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_DUNE2=${PATH_DUNE2}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# MORTAL KOMBAT 2
+#-------------------------------------------------------------------
+  mortalkombat2:
+    build:
+      context: ./mortalkombat2
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_MORTALKOMBAT2=${PATH_MORTALKOMBAT2}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# SIMCITY 2000
+#-------------------------------------------------------------------
+  simcity2000:
+    build:
+      context: ./simcity2000
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_SIMCITY2000=${PATH_SIMCITY2000}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# TOMBRAIDER
+#-------------------------------------------------------------------
+  tombraider:
+    build:
+      context: ./tombraider
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_TOMBRAIDER=${PATH_TOMBRAIDER}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# TRANSPORTATION TYCOON
+#-------------------------------------------------------------------
+  tycoon:
+    build:
+      context: ./tycoon
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_TYCOON=${PATH_TYCOON}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# WARCRAFT 2
+#-------------------------------------------------------------------
+  warcraft2:
+    build:
+      context: ./warcraft2
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_WARCRAFT2=${PATH_WARCRAFT2}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# WORM PLUS
+#-------------------------------------------------------------------
+  wormplus:
+    build:
+      context: ./wormplus
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERNAME}:/home/${USERNAME}
+    environment:
+      - PATH_WARMPLUS=${PATH_WARMPLUS}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# WINE
+#-------------------------------------------------------------------
+  wine:
+    build:
+      context: .
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - USERNAME=${USERNAME}
+      - WINEARCH=${WINEARCH}
+      - WINEDEBUG=${WINEDEBUG}
+    networks:
+      - backend
+
+#-------------------------------------------------------------------
+# NETWORK SETUP
+#-------------------------------------------------------------------
+networks:
+  backend:
+    driver: "bridge"
+
+#-------------------------------------------------------------------
+# VOLUME SETUP
+#-------------------------------------------------------------------
+volumes:
+  all_in_one:
+    driver: "local"
+  doom2:
+    driver: "local"
+  dune2:
+    driver: "local"
+  mortalkombat2:
+    driver: "local"
+  simcity2000:
+    driver: "local"
+  tombraider:
+    driver: "local"
+  tycoon:
+    driver: "local"
+  warcraft2:
+    driver: "local"
+  wormplus:
+    driver: "local"
