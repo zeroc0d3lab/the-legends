@@ -172,3 +172,5 @@ volumes:
     driver: "local"
   wormplus:
     driver: "local"
+  wine:
+    driver: "local"
