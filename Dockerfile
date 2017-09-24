@@ -22,8 +22,8 @@ RUN mkdir -p ${PATH_RUN}
 #-----------------------------------------------------------------------------
 # Installation Doom2
 #-----------------------------------------------------------------------------
-COPY rootfs/doom2.tar.gz ${PATH_GAMES}
-COPY rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
+COPY doom2/rootfs/doom2.tar.gz ${PATH_GAMES}
+COPY doom2/rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
 
 RUN tar zxvf ${PATH_GAMES}/doom2.tar.gz \
     && chown -R ${USERNAME}:${USERNAME} ${PATH_GAMES} \
