@@ -14,8 +14,12 @@ RUN mkdir -p ${PATH_RUN}
 #-----------------------------------------------------------------------------
 # Installation Doom2
 #-----------------------------------------------------------------------------
-RUN wget http://www.dr-shost.com/freqs/dosgam/doom2.rar -O /tmp/doom2.rar \
-    && 7z e /tmp/doom2.rar \
+RUN wget http://www.dr-shost.com/freqs/dosgam/doom2.rar -O /tmp/doom2/doom2.rar \
+    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r00 -O /tmp/doom2/doom2.r00 \
+    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r01 -O /tmp/doom2/doom2.r01 \
+    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r02 -O /tmp/doom2/doom2.r02 \
+    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r03 -O /tmp/doom2/doom2.r03 \
+    && 7z x /tmp/doom2/doom2.r00 -tiso.split -o /tmp/doom2 \
     && mv /tmp/doom2 ${PATH_RUN}
 
 COPY rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
