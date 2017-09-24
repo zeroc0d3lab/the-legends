@@ -13,14 +13,7 @@ ENV PATH_RUN ${PATH_GAMES}${PATH_DOOM2}
 #     && mkdir /tmp/.X11-unix \
 #     && chmod 1777 /tmp/.X11-unix
 
-USER ${USERNAME}
-ENV HOME /home/${USERNAME} \
-    WINEPREFIX /home/${USERNAME}/.wine \
-    WINEARCH win32 \
-    WINEDEBUG -all
-
-WORKDIR ${HOME}
-
+USER root
 #-----------------------------------------------------------------------------
 # Set Installation Repositories
 #-----------------------------------------------------------------------------
@@ -35,6 +28,14 @@ COPY doom2/rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
 RUN tar zxvf ${PATH_RUN}/doom2.tar.gz \
     && chown -R ${USERNAME}:${USERNAME} ${PATH_RUN}/doom2 \
     && chmod +x -R ${PATH_RUN}/doom2
+
+USER ${USERNAME}
+ENV HOME /home/${USERNAME} \
+    WINEPREFIX /home/${USERNAME}/.wine \
+    WINEARCH win32 \
+    WINEDEBUG -all
+
+WORKDIR ${HOME}
 
 #-----------------------------------------------------------------------------
 # Run Docker Container

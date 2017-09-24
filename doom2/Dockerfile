@@ -6,6 +6,7 @@ ENV PATH_GAMES /home/${USERNAME}/games
 ENV PATH_DOOM2 /doom2
 ENV PATH_RUN ${PATH_GAMES}${PATH_DOOM2}
 
+USER root
 #-----------------------------------------------------------------------------
 # Set Installation Repositories
 #-----------------------------------------------------------------------------
