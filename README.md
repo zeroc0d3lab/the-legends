@@ -24,7 +24,8 @@ docker run -it [name_container]
 
 example:
 ```
-docker run -t zeroc0d3lab/the-legends
+docker run -t zeroc0d3lab/the-legends-wine wine
+docker run -t zeroc0d3lab/the-legends-doom2 doom2
 ```
 
 * Running Inside Container
