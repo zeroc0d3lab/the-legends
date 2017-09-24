@@ -15,7 +15,7 @@ RUN mkdir -p ${PATH_RUN}
 # Installation Doom2
 #-----------------------------------------------------------------------------
 RUN wget ftp://pixelrage.ro/demos/doom2_full.rar -O /tmp/doom2.rar \
-    && unrar x /tmp/doom2.rar \
+    && 7z e /tmp/doom2.rar \
     && mv /tmp/doom2 ${PATH_RUN}
 
 COPY rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
