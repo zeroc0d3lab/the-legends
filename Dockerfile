@@ -29,16 +29,12 @@ RUN mkdir -p ${PATH_RUN}
 #-----------------------------------------------------------------------------
 # Installation Doom2
 #-----------------------------------------------------------------------------
-RUN mkdir -p /tmp/doom2 \
-    && wget http://www.dr-shost.com/freqs/dosgam/doom2.rar -O /tmp/doom2/doom2.rar \
-    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r00 -O /tmp/doom2/doom2.r00 \
-    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r01 -O /tmp/doom2/doom2.r01 \
-    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r02 -O /tmp/doom2/doom2.r02 \
-    && wget http://www.dr-shost.com/freqs/dosgam/doom2.r03 -O /tmp/doom2/doom2.r03 \
-    && 7z x /tmp/doom2/doom2.r00 -tiso.split -o /tmp/doom2 \
-    && mv /tmp/doom2 ${PATH_RUN}
-
+COPY doom2/rootfs/doom2.tar.gz ${PATH_RUN}
 COPY doom2/rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
+
+RUN tar zxvf ${PATH_RUN}/doom2.tar.gz \
+    && chown -R ${USERNAME}:${USERNAME} ${PATH_RUN}/doom2 \
+    && chmod +x -R ${PATH_RUN}/doom2
 
 #-----------------------------------------------------------------------------
 # Run Docker Container
