@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dosbox doom2/Doom2.exe -fullscreen
+dosbox doom2/DOOM2.exe -fullscreen
