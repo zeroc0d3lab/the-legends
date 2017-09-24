@@ -8,12 +8,13 @@
 ## How To Start ?
 * Build container
 ```
-docker build -it [name_container] .
+docker build -it [name_container] [folder_dockerfile]
 ```
 
 example:
 ```
-docker build -t zeroc0d3lab/the-legends .
+docker build -t zeroc0d3lab/the-legends-wine wine
+docker build -t zeroc0d3lab/the-legends-doom2 doom2
 ```
 
 * Run Container
