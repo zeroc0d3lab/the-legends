@@ -29,7 +29,7 @@ RUN mkdir -p ${PATH_RUN}
 #-----------------------------------------------------------------------------
 # Installation Doom2
 #-----------------------------------------------------------------------------
-RUN wget ftp://pixelrage.ro/demos/doom2_full.rar -O /tmp/doom2.rar \
+RUN wget http://www.dr-shost.com/freqs/dosgam/doom2.rar -O /tmp/doom2.rar \
     && 7z e /tmp/doom2.rar \
     && mv /tmp/doom2 ${PATH_RUN}
 
