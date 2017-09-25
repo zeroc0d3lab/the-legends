@@ -12,6 +12,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_ALL=${PATH_ALL}
     networks:
       - backend
@@ -24,8 +25,8 @@ services:
       context: ./doom2
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_DOOM2=${PATH_DOOM2}
     networks:
       - backend
@@ -38,8 +39,8 @@ services:
       context: ./dune2
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_DUNE2=${PATH_DUNE2}
     networks:
       - backend
@@ -52,8 +53,8 @@ services:
       context: ./mortalkombat2
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_MORTALKOMBAT2=${PATH_MORTALKOMBAT2}
     networks:
       - backend
@@ -66,8 +67,8 @@ services:
       context: ./simcity2000
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_SIMCITY2000=${PATH_SIMCITY2000}
     networks:
       - backend
@@ -80,8 +81,8 @@ services:
       context: ./tombraider
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_TOMBRAIDER=${PATH_TOMBRAIDER}
     networks:
       - backend
@@ -94,8 +95,8 @@ services:
       context: ./tycoon
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_TYCOON=${PATH_TYCOON}
     networks:
       - backend
@@ -108,8 +109,8 @@ services:
       context: ./warcraft2
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_WARCRAFT2=${PATH_WARCRAFT2}
     networks:
       - backend
@@ -122,8 +123,8 @@ services:
       context: ./wormplus
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
+      - USERNAME=${USERNAME}
       - PATH_WARMPLUS=${PATH_WARMPLUS}
     networks:
       - backend

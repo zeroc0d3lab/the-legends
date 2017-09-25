@@ -27,7 +27,8 @@ COPY doom2/rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
 
 RUN tar zxvf ${PATH_GAMES}/doom2.tar.gz \
     && chown -R ${USERNAME}:${USERNAME} ${PATH_GAMES} \
-    && chmod +x -R ${PATH_GAMES}
+    && chmod +x -R ${PATH_GAMES} \
+    && chmod 777 ${PATH_RUN}/run_doom2.sh
 
 USER ${USERNAME}
 ENV HOME /home/${USERNAME} \
@@ -40,4 +41,5 @@ WORKDIR ${HOME}
 #-----------------------------------------------------------------------------
 # Run Docker Container
 #-----------------------------------------------------------------------------
-# CMD ${PATH_RUN}/run_doom2.sh
+# RUN ${PATH_RUN}/run_doom2.sh
+CMD /bin/bash ${PATH_RUN}/run_doom2.sh
