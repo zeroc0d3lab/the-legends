@@ -20,11 +20,16 @@ COPY rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
 
 RUN tar zxvf ${PATH_GAMES}/doom2.tar.gz \
     && chown -R ${USERNAME}:${USERNAME} ${PATH_GAMES} \
-    && chmod +x -R ${PATH_GAMES}
+    && chmod +x -R ${PATH_GAMES} \
+    && chmod 777 ${PATH_RUN}/run_doom2.sh
 
-COPY rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
+WORKDIR ${HOME}
+# RUN echo "alias winegui='wine explorer /desktop=DockerDesktop,1024x768'" > ~/.bash_aliases
 
 #-----------------------------------------------------------------------------
 # Run Docker Container
 #-----------------------------------------------------------------------------
-CMD ${PATH_RUN}/run_doom2.sh
+USER ${USERNAME}
+# ONBUILD RUN ${PATH_RUN}/run_doom2.sh
+
+CMD ["/bin/bash"]

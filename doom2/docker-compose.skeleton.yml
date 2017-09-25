@@ -10,9 +10,9 @@ services:
       context: .
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${USERNAME}:/home/${USERNAME}
     environment:
       - PATH_DOOM2=${PATH_DOOM2}
+      - USERNAME=${USERNAME}
     networks:
       - backend
 

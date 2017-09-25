@@ -17,8 +17,9 @@ ENV HOME /home/${USERNAME} \
     WINEDEBUG -all
 
 WORKDIR ${HOME}
+# RUN echo "alias winegui='wine explorer /desktop=DockerDesktop,1024x768'" > ~/.bash_aliases
 
 #-----------------------------------------------------------------------------
 # Run Docker Container
 #-----------------------------------------------------------------------------
-CMD []
+CMD ["/bin/bash"]
