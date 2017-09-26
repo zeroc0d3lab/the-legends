@@ -1,6 +1,10 @@
 FROM zeroc0d3lab/ubuntu-wine
 MAINTAINER ZeroC0D3 Team <zeroc0d3.team@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV WINE_MONO_VERSION 4.5.6
+ENV WINE_GECKO_VERSION 2.40
+
 #-----------------------------------------------------------------------------
 # Wine User
 #-----------------------------------------------------------------------------
@@ -22,8 +26,8 @@ RUN mkdir -p ${PATH_RUN}
 #-----------------------------------------------------------------------------
 # Installation Doom2
 #-----------------------------------------------------------------------------
-COPY doom2/rootfs/doom2.tar.gz ${PATH_GAMES}
-COPY doom2/rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
+COPY games/doom2/rootfs/doom2.tar.gz ${PATH_GAMES}
+COPY games/doom2/rootfs/run_doom2.sh ${PATH_RUN}/run_doom2.sh
 
 RUN tar zxvf ${PATH_GAMES}/doom2.tar.gz \
     && chown -R ${USERNAME}:${USERNAME} ${PATH_GAMES} \
@@ -41,5 +45,4 @@ WORKDIR ${HOME}
 #-----------------------------------------------------------------------------
 # Run Docker Container
 #-----------------------------------------------------------------------------
-# RUN ${PATH_RUN}/run_doom2.sh
-CMD /bin/bash ${PATH_RUN}/run_doom2.sh
+CMD [${PATH_RUN}"/run_doom2.sh"]
