@@ -1,6 +1,10 @@
 FROM zeroc0d3lab/ubuntu-wine
 MAINTAINER ZeroC0D3 Team <zeroc0d3.team@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV WINE_MONO_VERSION 4.5.6
+ENV WINE_GECKO_VERSION 2.40
+
 #-----------------------------------------------------------------------------
 # Wine User
 #-----------------------------------------------------------------------------
@@ -22,4 +26,4 @@ WORKDIR ${HOME}
 #-----------------------------------------------------------------------------
 # Run Docker Container
 #-----------------------------------------------------------------------------
-CMD ["/bin/bash"]
+CMD ["bash"]
