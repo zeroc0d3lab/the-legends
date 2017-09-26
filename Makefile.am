@@ -1,3 +1,3 @@
 SUBDIRS = \
-    doom2 \
+    games/doom2 \
     wine
