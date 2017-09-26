@@ -37,7 +37,7 @@ AC_ARG_VAR(PULL_OPTIONS, pull options)
 
 AC_CONFIG_FILES([
     Makefile
-    doom2/Makefile
+    games/doom2/Makefile
     wine/Makefile
 ])
 

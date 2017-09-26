@@ -2475,7 +2475,7 @@ $as_echo "${TAG}" >&6; }
 
 
 
-ac_config_files="$ac_config_files Makefile doom2/Makefile wine/Makefile"
+ac_config_files="$ac_config_files Makefile games/doom2/Makefile wine/Makefile"
 
 
 cat >confcache <<\_ACEOF
