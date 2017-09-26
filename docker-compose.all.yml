@@ -7,7 +7,7 @@ services:
 #-------------------------------------------------------------------
   all_in_one:
     build:
-      context: ./allinone
+      context: ./games/allinone
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${USERNAME}:/home/${USERNAME}
@@ -22,7 +22,7 @@ services:
 #-------------------------------------------------------------------
   doom2:
     build:
-      context: ./doom2
+      context: ./games/doom2
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -36,7 +36,7 @@ services:
 #-------------------------------------------------------------------
   dune2:
     build:
-      context: ./dune2
+      context: ./games/dune2
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -50,7 +50,7 @@ services:
 #-------------------------------------------------------------------
   mortalkombat2:
     build:
-      context: ./mortalkombat2
+      context: ./games/mortalkombat2
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -64,7 +64,7 @@ services:
 #-------------------------------------------------------------------
   simcity2000:
     build:
-      context: ./simcity2000
+      context: ./games/simcity2000
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -78,7 +78,7 @@ services:
 #-------------------------------------------------------------------
   tombraider:
     build:
-      context: ./tombraider
+      context: ./games/tombraider
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -92,7 +92,7 @@ services:
 #-------------------------------------------------------------------
   tycoon:
     build:
-      context: ./tycoon
+      context: ./games/tycoon
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -106,7 +106,7 @@ services:
 #-------------------------------------------------------------------
   warcraft2:
     build:
-      context: ./warcraft2
+      context: ./games/warcraft2
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
@@ -120,7 +120,7 @@ services:
 #-------------------------------------------------------------------
   wormplus:
     build:
-      context: ./wormplus
+      context: ./games/wormplus
     volumes:
       - /etc/localtime:/etc/localtime:ro
     environment:
