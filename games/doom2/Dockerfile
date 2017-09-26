@@ -32,4 +32,4 @@ WORKDIR ${HOME}
 USER ${USERNAME}
 # ONBUILD RUN ${PATH_RUN}/run_doom2.sh
 
-CMD ["/bin/bash"]
+CMD [${PATH_RUN}"/run_doom2.sh"]
